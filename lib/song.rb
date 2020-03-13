@@ -19,15 +19,14 @@ class Song
     @@genres << genre
 
     if @@genre_count.has_key?(genre)
-#            sort_value.map {|values|
-#              @sorting[by_key] << values
-#            }
-#            else
+       @@genre_count[genre] = @@genre_count.values + 1
+           else
+             @@genre_count[genre] = 1
 #               @sorting[by_key] = []
 #               sort_value.map {|values|
 #               @sorting[by_key] << values
 #             }
-#           end
+           end
 
 
      if @@artist.include?(artist)
