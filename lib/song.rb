@@ -18,15 +18,11 @@ class Song
     @@artists << artist
     @@genres << genre
 @@genre_count[genre] = 1
-#     if @@genre_count.has_key?(genre)
-#        @@genre_count[genre] = @@genre_count.values + 1
-#            else
-#              @@genre_count[genre] = 1
-# #               @sorting[by_key] = []
-# #               sort_value.map {|values|
-# #               @sorting[by_key] << values
-# #             }
-#            end
+    if @@genre_count.has_key?(genre)
+      #  @@genre_count[genre] = @@genre_count.values + 1
+            else
+             @@genre_count[genre] += 1
+           end
 
 
      if @@artist.include?(artist)
