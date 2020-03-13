@@ -9,6 +9,7 @@ class Song
   @@artists = []
   @@genres =  []
   @@genre_count = {}
+  @@artist_count = {}
   @@artist = []
   @@genre = []
   def initialize(name,artist,genre)
@@ -17,15 +18,19 @@ class Song
     @genre = genre
     @@artists << artist
     @@genres << genre
-# @@genre_count[genre] = 1
+
+    if @@artist_count.has_key?(artist)
+      @@artist_count[artist] += 1
+    else
+      @@artist_count[artist] = 1
+    end
+
+
     if @@genre_count.has_key?(genre)
       @@genre_count[genre] += 1
-      #  @@genre_count[genre] = @@genre_count.values + 1
-            else
-             @@genre_count[genre] = 1
-           end
-
-
+    else
+      @@genre_count[genre] = 1
+    end
      if @@artist.include?(artist)
      else @@artist << artist
      end
@@ -48,6 +53,9 @@ def self.artists
 end
 def self.genre_count
   @@genre_count
+end
+def self.artist_count
+  @@artist_count
 end
 
 end
